@@ -1,0 +1,100 @@
+---
+import SocialPill from "../components/SocialPill.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import MailIcon from "../icons/Mail.astro";
+import InstagramIcon from "../icons/Instagram.astro";
+---
+
+<section class="w-full mx-auto lg:w-[740px] py-44">
+    <img
+        class="rounded-full w-12 h-12 mb-4"
+        src="/alejandro/alejandro.webp"
+        alt="alejandrodev"
+    />
+    <h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-4">
+        ¡Hola! Soy Alejandro Melgarejo
+    </h1>
+    <div class="min-h-[2rem] mb-2 flex items-center gap-1">
+        <h2
+            class="subtitle typed-text text-2xl opacity-80 text-blue-400"
+            aria-live="polite"
+            aria-atomic="true"
+        >
+        </h2>
+        <span class="text-2xl text-blue-400 animate-pulse">|</span>
+    </div>
+
+    <h2 class="text-xl text-wrap opacity-80">
+        <span class="text-red-200"> De Paraguay </span>🇵🇾. <br />
+        Construyo aplicaciones rápidas, escalables y enfocadas en resultados. <br
+        />
+        Desarrollo soluciones web que convierten ideas en productos reales. <br
+        />
+        Frontend moderno + backend sólido para proyectos reales.
+    </h2>
+
+    <nav class="flex gap-x-2 mt-8">
+        <SocialPill
+            href="https://github.com/ramonmlzz"
+            aria-label="GitHub de Alejandro Melgarejo"
+        >
+            <GitHubIcon class="w-5 h-5 text-white" />
+            GitHub
+        </SocialPill>
+        <SocialPill
+            href="mailto:alejandromelgarejodev@gmail.com"
+            aria-label="Correo electrónico de Alejandro Melgarejo"
+        >
+            <MailIcon class="w-5 h-5 text-white" />
+            Correo
+        </SocialPill>
+        <SocialPill
+            href="https://www.instagram.com/alejandromlzz"
+            aria-label="Instagram de Alejandro Melgarejo"
+        >
+            <InstagramIcon class="w-5 h-5 text-white" />
+            Instagram
+        </SocialPill>
+    </nav>
+    <script>
+        const textos = [
+            "Full Stack Web Developer",
+            "Estudiante de Ingeniería Informática",
+        ];
+        const typed = document.querySelector(".typed-text")!;
+        let idxTexto = 0;
+        let idxLetra = 0;
+        let borrando = false;
+
+        function escribir() {
+            const textoActual = textos[idxTexto];
+            if (borrando) {
+                idxLetra--;
+                typed.textContent = textoActual.substring(0, idxLetra);
+                if (idxLetra === 0) {
+                    borrando = false;
+                    idxTexto = (idxTexto + 1) % textos.length;
+                    setTimeout(escribir, 500);
+                    return;
+                }
+            } else {
+                idxLetra++;
+                typed.textContent = textoActual.substring(0, idxLetra);
+                if (idxLetra === textoActual.length) {
+                    borrando = true;
+                    setTimeout(escribir, 1100); // pausa antes de borrar
+                    return;
+                }
+            }
+
+            if (borrando && idxLetra === 0) {
+                borrando = false;
+                idxLetra = (idxTexto + 1) % textos.length;
+            }
+
+            setTimeout(escribir, borrando ? 40 : 120);
+        }
+
+        escribir();
+    </script>
+</section>
