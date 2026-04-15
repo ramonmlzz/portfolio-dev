@@ -1,0 +1,188 @@
+---
+import AstroIcon from "../icons/Astroo.astro";
+import ReactIcon from "../icons/React.astro";
+import TailwindIcon from "../icons/Tailwind.astro";
+import JavaScriptIcon from "../icons/JavaScript.astro";
+import JavaIcon from "../icons/Java.astro";
+import PostgreSQLIcon from "../icons/PostgreSQL.astro";
+import MySQLIcon from "../icons/MySQL.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import NetBeansIcon from "../icons/NetBeans.astro";
+import ViteIcon from "../icons/Vite.astro";
+import TypeScriptIcon from "../icons/TypeScript.astro";
+import HTMLIcon from "../icons/HTML.astro";
+import CSSIcon from "../icons/CSS.astro";
+import NodeIcon from "../icons/Node.astro";
+import PythonIcon from "../icons/Python.astro";
+import GitIcon from "../icons/Git.astro";
+import VSCodeIcon from "../icons/VSCode.astro";
+import AccessIcon from "../icons/Access.astro";
+import ClaudeIcon from "../icons/Claude.astro";
+
+const TAG_MAP = {
+    HTML: {
+        name: "HTML",
+        icon: HTMLIcon,
+        class: "bg-orange-950/40 text-orange-100 border-orange-800 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md",
+    },
+    CSS: {
+        name: "CSS",
+        icon: CSSIcon,
+        class: "bg-blue-950/40 text-blue-100 border-blue-800 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md",
+    },
+    ASTRO: {
+        name: "Astro",
+        icon: AstroIcon,
+        class: "bg-[#ff5d05]/10 text-[#ff5d05] border-[#ff5d05]/50 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md",
+    },
+    REACT: {
+        name: "React",
+        icon: ReactIcon,
+        class: "bg-[#002244]/50 text-[#58c4dc] border-[#003d5c] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md",
+    },
+    TAILWIND_CSS: {
+        name: "Tailwind CSS",
+        icon: TailwindIcon,
+        class: "bg-sky-950/40 text-sky-200 border-sky-800 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md",
+    },
+    TYPE_SCRIPT: {
+        name: "TypeScript",
+        icon: TypeScriptIcon,
+        class: "bg-[#002244]/50 text-[#5da9ff] border-[#003366] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md",
+    },
+    JAVA_SCRIPT: {
+        name: "JavaScript",
+        icon: JavaScriptIcon,
+        class: "bg-yellow-950/40 text-yellow-100 border-yellow-800 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md",
+    },
+    JAVA: {
+        name: "Java",
+        icon: JavaIcon,
+        class: "bg-red-950/40 text-red-100 border-red-800 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md",
+    },
+    NODE: {
+        name: "Node.js",
+        icon: NodeIcon,
+        class: "bg-green-950/40 text-green-100 border-green-800 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md",
+    },
+    PYTHON: {
+        name: "Python",
+        icon: PythonIcon,
+        class: "bg-[#002244]/50 text-[#58c4dc] border-[#003d5c] transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md",
+    },
+    POSTGRESQL: {
+        name: "PostgreSQL",
+        icon: PostgreSQLIcon,
+        class: "bg-slate-800/60 text-slate-100 border-slate-700 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md",
+    },
+    MYSQL: {
+        name: "MySQL",
+        icon: MySQLIcon,
+        class: "bg-blue-950/40 text-blue-100 border-blue-800 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md",
+    },
+    ACCESS: {
+        name: "Microsoft Access",
+        icon: AccessIcon,
+        class: "bg-[#a61727]/10 text-[#a61727] border-[#a61727]/50 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md",
+    },
+    GIT: {
+        name: "Git",
+        icon: GitIcon,
+        class: "bg-gray-800/40 text-gray-100 border-gray-700 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md",
+    },
+    GITHUB: {
+        name: "GitHub",
+        icon: GitHubIcon,
+        class: "bg-gray-800/40 text-gray-100 border-gray-700 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md",
+    },
+    VITE: {
+        name: "Vite",
+        icon: ViteIcon,
+        class: "bg-[#646cff]/10 text-[#646cff] border-[#646cff]/50 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md",
+    },
+    NETBEANS: {
+        name: "NetBeans",
+        icon: NetBeansIcon,
+        class: "transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md",
+    },
+    VSCode: {
+        name: "VS Code",
+        icon: VSCodeIcon,
+        class: "bg-[#007acc]/10 text-[#007acc] border-[#007acc]/50 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md",
+    },
+    CLAUDE: {
+        name: "Claude",
+        icon: ClaudeIcon,
+        class: "bg-[#ff5d05]/10 text-[#ff5d05] border-[#ff5d05]/50 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-md",
+    },
+};
+
+const skills = [
+    {
+        name: "Frontend",
+        technologies: [
+            TAG_MAP.HTML,
+            TAG_MAP.CSS,
+            TAG_MAP.ASTRO,
+            TAG_MAP.REACT,
+            TAG_MAP.TAILWIND_CSS,
+            TAG_MAP.JAVA_SCRIPT,
+            TAG_MAP.TYPE_SCRIPT,
+        ],
+    },
+    {
+        name: "Backend",
+        technologies: [TAG_MAP.JAVA, TAG_MAP.NODE, TAG_MAP.PYTHON],
+    },
+    {
+        name: "Bases de Datos",
+        technologies: [TAG_MAP.POSTGRESQL, TAG_MAP.MYSQL, TAG_MAP.ACCESS],
+    },
+    {
+        name: "Herramientas",
+        technologies: [
+            TAG_MAP.GIT,
+            TAG_MAP.GITHUB,
+            TAG_MAP.VITE,
+            TAG_MAP.NETBEANS,
+            TAG_MAP.VSCode,
+            TAG_MAP.CLAUDE,
+        ],
+    },
+];
+---
+
+<section id="habilidades" class="w-full mx-auto lg:w-[1000px] py-20 px-4">
+    <h2 class="text-3xl font-bold text-white mb-2">Habilidades</h2>
+    <p class="text-white/50 mb-12 text-sm">
+        Tecnologías y herramientas que domino.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {
+            skills.map((skill) => (
+                <div class="p-8 rounded-3xl border border-white/10 bg-white/5 flex flex-col gap-6">
+                    <div>
+                        <h3 class="text-xl font-semibold text-white mb-4">
+                            {skill.name}
+                        </h3>
+                        <div class="flex flex-wrap gap-4">
+                            {skill.technologies.map((tech) => (
+                                <div
+                                    class={`flex items-center gap-2 px-4 py-2 rounded-lg border ${tech.class}`}
+                                >
+                                    <div>
+                                        <tech.icon class="w-5 h-5" />
+                                    </div>
+                                    <div>
+                                        <span class="text-sm">{tech.name}</span>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</section>
