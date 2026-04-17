@@ -8,25 +8,14 @@ import Footer from "../components/Footer.astro";
 ---
 
 <Layout
-  title="Alejandro Melgarejo | Desarrollador y Programador Web"
+  title="Alejandro Melgarejo | Desarrollador Web Full Stack en Paraguay"
   description="Portfolio de Alejandro Melgarejo, desarrollador web full stack en Paraguay"
 >
   <Header />
-  <main>
-    <section
-      id="top"
-      class="w-full mx-auto lg:w-[1100px] min-h-[80vh] flex flex-col justify-center py-20"
-    >
-      <Hero />
-    </section>
-
-    <section id="proyectos" class="w-full mx-auto lg:w-[1100px] pt-32 pb-20">
-      <Proyectos />
-    </section>
-
-    <section id="habilidades" class="w-full mx-auto lg:w-[1300px] py-20">
-      <Habilidades />
-    </section>
+  <main id="top">
+    <Hero />
+    <Proyectos />
+    <Habilidades />
   </main>
   <Footer />
 </Layout>
